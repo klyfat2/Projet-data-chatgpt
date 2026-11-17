@@ -4,6 +4,7 @@ author: "Marilou Navelet, François de Cosse Brissac"
 format: typst
 editor: source
 df-print: kable
+echo: false
 ---
 
 The raw datasets used for this project were downloaded from the official sources (Mendeley Data for the ChatGPT perception survey, and the World Bank for the country income classification). These raw files have been added directly to the GitHub repository of this project.
@@ -33,25 +34,28 @@ wb_data <- vroom(here("data", "World Bank Country and Lending Groups .csv"))
 #| message: false
 
 survey_summary <- data.frame(
-  Fichier = "survey dataset.csv",
-  Lignes = nrow(survey_data),
-  Colonnes = ncol(survey_data),
-  Variables_numeriques = survey_data |> select(where(is.numeric)) |> ncol(),
-  Variables_caracteres = survey_data |> select(where(is.character)) |> ncol(),
-  Valeurs_manquantes = sum(is.na(survey_data))
+  Statistic = c("File", "Number of rows", "Number of columns", "Numeric variables", "Character variables", "Missing values (NA)"),
+  Value = c("survey dataset.csv", 
+            nrow(survey_data), 
+            ncol(survey_data), 
+            survey_data |> select(where(is.numeric)) |> ncol(), 
+            survey_data |> select(where(is.character)) |> ncol(), 
+            sum(is.na(survey_data)))
 )
 
 wb_summary <- data.frame(
-  Fichier = "World Bank Country and Lending Groups .csv",
-  Lignes = nrow(wb_data),
-  Colonnes = ncol(wb_data),
-  Variables_numeriques = wb_data |> select(where(is.numeric)) |> ncol(),
-  Variables_caracteres = wb_data |> select(where(is.character)) |> ncol(),
-  Valeurs_manquantes = sum(is.na(wb_data))
+  Statistic = c("File", "Number of rows", "Number of columns", "Numeric variables", "Character variables", "Missing values (NA)"),
+  Value = c("World Bank Country and Lending Groups .csv", 
+            nrow(wb_data), 
+            ncol(wb_data), 
+            wb_data |> select(where(is.numeric)) |> ncol(), 
+            wb_data |> select(where(is.character)) |> ncol(), 
+            sum(is.na(wb_data)))
 )
 
 survey_summary
 wb_summary
+
 ```
 
 
