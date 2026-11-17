@@ -15,3 +15,40 @@ library(dplyr)
 library(vroom)
 library(tidyr)
 ```
+
+```{r}
+#| message: false
+
+survey_data <- vroom(here("data", "survey dataset.csv"), 
+                     delim = ";", 
+                     locale = locale(encoding = "latin1"))
+wb_data <- vroom(here("data", "World Bank Country and Lending Groups .csv"))
+
+```
+
+```{r}
+#| message: false
+
+survey_summary <- data.frame(
+  Fichier = "survey dataset.csv",
+  Lignes = nrow(survey_data),
+  Colonnes = ncol(survey_data),
+  Variables_numeriques = survey_data |> select(where(is.numeric)) |> ncol(),
+  Variables_caracteres = survey_data |> select(where(is.character)) |> ncol(),
+  Valeurs_manquantes = sum(is.na(survey_data))
+)
+
+wb_summary <- data.frame(
+  Fichier = "World Bank Country and Lending Groups .csv",
+  Lignes = nrow(wb_data),
+  Colonnes = ncol(wb_data),
+  Variables_numeriques = wb_data |> select(where(is.numeric)) |> ncol(),
+  Variables_caracteres = wb_data |> select(where(is.character)) |> ncol(),
+  Valeurs_manquantes = sum(is.na(wb_data))
+)
+
+survey_summary
+wb_summary
+```
+
+
