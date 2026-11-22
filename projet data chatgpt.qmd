@@ -64,14 +64,29 @@ wb_summary
 survey = survey_data |>
   mutate( Q2 = Q2 |> 
             na_if(3) |>
-            na_if(4))
+            na_if(4)) |>
+  rename(gender = Q2)
 ```
 
 ### Age
 
 ```{r}
 survey = survey |> 
-  mutate(Q3 = if_else(Q3 < 16 | Q3 > 50, NA, Q3))
+  mutate(Q3 = if_else(Q3 < 16 | Q3 > 50, NA, Q3)) |> 
+  rename(age = Q3)
+```
+
+### Rename 
+
+```{r}
+survey = survey |> 
+  rename(
+    nationality = Q1,
+    ChatGPT_user = Q13, 
+     ChatGPT_version = Q14,
+    frequency = Q15,
+    ethic_policy = Q20
+  )
 ```
 
 ## Data Joining
