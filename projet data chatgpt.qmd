@@ -89,6 +89,18 @@ survey = survey |>
   )
 ```
 
+```{r}
+wb = wb_data |>
+  filter(!is.na(Economy)) |>
+  rename(country = Economy) |>
+  mutate(country = recode_values(country, 
+    "C\xf4te d\x92Ivoire" ~ "Cote d'Ivoire",
+    "S\xe3o Tom\xe9 and Pr\xedncipe" ~ "Sao Tome and Príncipe",
+    "T\xfcrkiye" ~ "Turkiye",
+    default = country 
+  ))
+```
+
 ## Data Joining
 
 ### Key variable 
