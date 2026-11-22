@@ -59,6 +59,26 @@ wb_summary
 
 ```
 
+
+To investigate whether generative AI reproduces or exacerbates existing social inequalities in higher education, this project relies on two complementary datasets: a large-scale international survey providing micro-level individual data, and a macroeconomic database providing country-level data.
+
+**The Global ChatGPT Student Survey (Micro-level Data)** The primary data source is the *Global ChatGPT Student Survey*, an international online survey coordinated by the Faculty of Public Administration at the University of Ljubljana (Slovenia). The data collection took place between October 2023 and February 2024, roughly one year after the public launch of ChatGPT. To ensure broad geographic and cultural representation, the questionnaire was translated into seven languages (English, Italian, Spanish, Turkish, Japanese, Arabic, and Hebrew). The survey was distributed using convenience sampling through university communication platforms and in-classroom announcements.
+
+The dataset, openly available via Mendeley Data (Ravšelj et al., 2024), contains approximately 23,000 responses. It covers a wide range of variables, including socio-demographic characteristics, perceived wealth, and detailed metrics on AI usage. The latter includes the frequency of use for specific tasks (coding, writing) and the type of subscription held (free or premium version). Most items rely on a 5-point Likert scale.
+
+**The World Bank Income Classification (Macro-level Data)** A significant limitation of self-reported data is the subjectivity of perceived wealth. A student who considers themselves "wealthy" in a low-income country does not possess the same actual purchasing power as a student who considers themselves "average" in a high-income country. To overcome this bias, we merge the survey data with macroeconomic indicators from the World Bank.
+
+Specifically, we use two sources from the World Bank:
+
+1.  **The Country and Lending Groups classification:** This categorizes countries into four groups (low-income, lower-middle-income, upper-middle-income, and high-income) based on their Gross National Income (GNI) per capita. This classification is updated annually and includes rigorous methodological documentation.
+
+2.  **GDP per capita in Purchasing Power Parity (PPP):** Used as a continuous variable to measure the economic development of the respondent's country of residence.
+
+**Data Joining and Cleaning Process** The two datasets are linked at the country level. The survey contains respondents' countries of residence, and the World Bank data provides the corresponding country names and ISO codes. The primary data-cleaning challenge is the harmonization of country labels. We must standardize the spelling of countries across both files to execute a successful merge.
+
+By combining individual self-reported wealth with the World Bank's macroeconomic data, we can analyze how the "fixed cost" of a ChatGPT Premium subscription (approximately \$20 USD per month) represents a vastly different financial burden depending on a student's country income group. This linkage is essential to test our hypothesis of a "double privilege" in AI access, where individual economic capital interacts with national economic development.
+
+
 ## Description of the main variables
 
 - ChatGPT version : The version of ChatGPT used (subscription or free) may show if the “efficiency” of the AI has an impact
