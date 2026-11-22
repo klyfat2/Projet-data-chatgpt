@@ -56,3 +56,11 @@ survey_summary
 wb_summary
 
 ```
+### Gender
+```{r}
+survey = survey_data |>
+  mutate( Q2 = Q2 |> 
+            na_if(3) |>
+            na_if(4))
+```
+
