@@ -108,11 +108,13 @@ wb = wb_data |>
 ```{r}
 survey <- survey |>
   mutate(country = survey_data$Q4)
+survey = survey |>
+  rename(country = Q4)
 ```
 
 ```{r}
 survey <- survey |> 
-  mutate(country = case_match(country,
+  mutate(country = recode_values(country,
     "The Netherlands"          ~ "Netherlands",
     "Turkey"                   ~ "Türkiye",
     "Macedonia"                ~ "North Macedonia",
@@ -135,7 +137,7 @@ survey <- survey |>
     "Korea North"              ~ "Korea, Dem. People's Rep.",
     "Vatican City (Holy See)"  ~ "Vatican", 
     "Other:"                   ~ NA_character_,
-    .default = country 
+    default = country 
   ))
 ```
 
