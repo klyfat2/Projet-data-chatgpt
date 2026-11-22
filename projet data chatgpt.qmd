@@ -158,3 +158,12 @@ survey = survey|>
   left_join(wb, by = "country")
 ```
 
+## Description of the research question
+
+The rapid rise of generative AI tools like ChatGPT is changing how university students learn and work. While early studies suggest that AI can act as a "personalized tutor" that helps every student regardless of their background, paid subscriptions create new financial barriers. This thesis sets out to explore a central research question: does generative AI reduce educational inequalities in higher education, or does it reinforce existing economic and gender gaps?
+
+To investigate this question, our upcoming empirical analysis will combine an international student survey with World Bank macroeconomic indicators to test three main hypotheses. 
+While basic access to ChatGPT is free, the most powerful models require paid subscriptions. We will test whether access to paid AI depends on both a student's personal wealth and the economic development of their home country.
+We will examine whether students from modest backgrounds or competitive fields use paid AI as a strategic investment to improve their grades and job prospects. We will also test whether students who work part-time jobs rely more heavily on AI to save time and manage busy schedules.
+We aim to verify whether traditional gender gaps persist in AI adoption, looking at whether men and women differ in their overall usage intensity, their likelihood of paying for Premium versions, and their use of technical tasks like coding and math versus academic writing.
+By exploring these three dimensions, this research seeks to understand whether generative AI truly democratizes access to academic support, or if it simply mirrors and amplifies existing social and gender divides in higher education.
