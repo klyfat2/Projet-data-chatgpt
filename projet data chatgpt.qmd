@@ -59,6 +59,17 @@ wb_summary
 
 ```
 
+## Description of the main variables
+
+- ChatGPT version : The version of ChatGPT used (subscription or free) may show if the “efficiency” of the AI has an impact
+- Economic statut (Q39) : The perceived economic statut is our only way to know the revenu of our sample
+- Frequency : Frequency of use may differ depending on gender, academic level, field of study or the version of ChatGPT used 
+- Type of uses (Q18) : Such as frequency of use, usages patterns may differ depending on gender, academic level, field of study or the version of ChatGPT used 
+- Success in studies (Q35a) : The perceived success in studies is our only indicator of the efficiency of our sample 
+- Region : Uses may differ depending on the region
+- Income Group : Linked with the economic statut, the income group will allow us to build a scale of real wealth 
+
+
 ## Data Cleaning 
 
 ### Gender
