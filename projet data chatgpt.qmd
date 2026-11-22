@@ -7,6 +7,8 @@ df-print: kable
 echo: false
 ---
 
+## Description of the sources
+
 The raw datasets used for this project were downloaded from the official sources (Mendeley Data for the ChatGPT perception survey, and the World Bank for the country income classification). These raw files have been added directly to the GitHub repository of this project. The Github repository can be found at the following link: \[https://github.com/klyfat2/Projet-data-chatgpt.git\]
 
 ```{r}
