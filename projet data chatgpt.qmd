@@ -74,3 +74,44 @@ survey = survey |>
   mutate(Q3 = if_else(Q3 < 16 | Q3 > 50, NA, Q3))
 ```
 
+## Data Joining
+
+### Key variable 
+
+```{r}
+survey <- survey |>
+  mutate(country = survey_data$Q4)
+```
+
+```{r}
+survey <- survey |> 
+  mutate(country = case_match(country,
+    "The Netherlands"          ~ "Netherlands",
+    "Turkey"                   ~ "Türkiye",
+    "Macedonia"                ~ "North Macedonia",
+    "Antigua & Barbuda"        ~ "Antigua and Barbuda",
+    "Bosnia & Herzegovina"     ~ "Bosnia and Herzegovina",
+    "United States of America" ~ "United States",
+    "Cote d’Ivoire"            ~ "Côte d’Ivoire",
+    "Cape Verde"               ~ "Cabo Verde",
+    "Taiwan"                   ~ "Taiwan, China",
+    "The Philippines"          ~ "Philippines",
+    "Bahamas"                  ~ "Bahamas, The",
+    "Egypt"                    ~ "Egypt, Arab Rep.",
+    "Russia"                   ~ "Russian Federation",
+    "Gambia"                   ~ "Gambia, The",
+    "Czech Republic"           ~ "Czechia",
+    "Slovakia"                 ~ "Slovak Republic",
+    "Iran"                     ~ "Iran, Islamic Rep.",
+    "Palestinian State*"       ~ "West Bank and Gaza",
+    "Korea South"              ~ "Korea, Rep.",
+    "Korea North"              ~ "Korea, Dem. People's Rep.",
+    "Vatican City (Holy See)"  ~ "Vatican", 
+    "Other:"                   ~ NA_character_,
+    .default = country 
+  ))
+```
+
+```{r}
+wb_data$country = wb_data$Economy
+```
