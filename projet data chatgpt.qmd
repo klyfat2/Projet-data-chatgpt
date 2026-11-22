@@ -115,3 +115,11 @@ survey <- survey |>
 ```{r}
 wb_data$country = wb_data$Economy
 ```
+
+### Join 
+
+```{r}
+survey = survey|>
+  left_join(wb_data, by = "country")
+```
+
