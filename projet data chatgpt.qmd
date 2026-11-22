@@ -106,8 +106,6 @@ wb = wb_data |>
 ### Key variable 
 
 ```{r}
-survey <- survey |>
-  mutate(country = survey_data$Q4)
 survey = survey |>
   rename(country = Q4)
 ```
@@ -138,10 +136,6 @@ survey <- survey |>
     "Other:"                   ~ NA_character_,
     default = country 
   ))
-```
-
-```{r}
-wb_data$country = wb_data$Economy
 ```
 
 ### Join 
