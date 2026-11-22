@@ -116,12 +116,11 @@ survey = survey |>
 survey <- survey |> 
   mutate(country = recode_values(country,
     "The Netherlands"          ~ "Netherlands",
-    "Turkey"                   ~ "Türkiye",
+    "Turkey"                   ~ "Turkiye",
     "Macedonia"                ~ "North Macedonia",
     "Antigua & Barbuda"        ~ "Antigua and Barbuda",
     "Bosnia & Herzegovina"     ~ "Bosnia and Herzegovina",
     "United States of America" ~ "United States",
-    "Cote d’Ivoire"            ~ "Côte d’Ivoire",
     "Cape Verde"               ~ "Cabo Verde",
     "Taiwan"                   ~ "Taiwan, China",
     "The Philippines"          ~ "Philippines",
